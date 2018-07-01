@@ -15,6 +15,8 @@ var cacheFiles = [
           caches.open(cacheName).then(function(cache){
               console.log("[ServiceWorker] Caching cachefiles");
               return cache.addAll(cacheFiles);
+              return cache.get('https://free.currencyconverterapi.com/api/v5/currencies');
+              
           })
       )
     })
@@ -34,12 +36,12 @@ var cacheFiles = [
     self.addEventListener('fetch',function(e){
         console.log("[ServiceWorker] Fetching",e.request.url);
         e.respondWith(
+            fetch('https://free.currencyconverterapi.com/api/v5/currencies').then(function(){
+                console.log('sjide');
+            })
             caches.match(e.request).then(function(response){
                 if(response) {
                     console.log("[ServiceWorker] found in cache",e.request.url);
-                        fetch("https://free.currencyconverterapi.com/api/v5/currencies").then(function(response){
-                            alert();
-                        })
                     return response;
                 }
                 else{

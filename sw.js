@@ -1,4 +1,4 @@
-var cacheName = 'v1';
+cacheName = 'v1';
 var cacheFiles = [
                   'index.html',
                   'ext.css',
@@ -25,7 +25,7 @@ var cacheFiles = [
       )
     })
     self.addEventListener('activate',function(e){
-        console.log("[ServiceWorker] Actiated")
+        console.log("[ServiceWorker] Actiated");
     })
     self.addEventListener('fetch',function(e){
         console.log("[ServiceWorker] Fetching",e.request.url);

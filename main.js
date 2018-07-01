@@ -29,13 +29,13 @@
           currencies = response;
           for(c in currencies.results){ 
             let option=document.createElement('option');
-            option.value = `${currencies[c].id}`;  
-            let check = currencies[c].id;
+            option.value = `${currencies.results[c].id}`;  
+            let check = currencies.results[c].id;
             if(typeof check === 'undefined'){
               check ='';
             
             }
-            option.text =  ` ${check} (${currencies[c].currencyName})`;  
+            option.text =  ` ${check} (${currencies.results[c].currencyName})`;  
             expect.appendChild(option);
             have.appendChild(option.cloneNode(true));
           }

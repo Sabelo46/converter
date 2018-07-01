@@ -27,7 +27,7 @@
       };
       get().then(function(response){
           console.log('Success',response);
-          let currencies = data.results;
+          let currencies = response.results;
       
         
           for(c in currencies){ 

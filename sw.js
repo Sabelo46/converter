@@ -42,20 +42,7 @@ var cacheFiles = [
                 else{
                     return fetch(e.request);
                 }
-                var requestClone = e.request.clone();
-                fetch(requestClone).then(function(response){
-                    if(!response){
-                        console.log("[ServiceWorker] Not found");
-                    }
-                    var responseClone = response.clone();
-                    caches.open(cacheName)
-                                .then(function(cache){
-                                    console.log("[ServiceWorker] new data", e.request.url);
-                                    alert('djej');
-
-                                }) 
-                })
-                
+                return fetch('https://free.currencyconverterapi.com/api/v5/convert?q=USD_PHP,PHP_USD');
             })
         )
     })

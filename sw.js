@@ -14,29 +14,14 @@ var cacheFiles = [
                   'https://free.currencyconverterapi.com/api/v5/currencies'
               
                   ]
-	self.addEventListener('install', function(event) {
+	self.addEventListener('install', function(e) {
 	  // Perform install step
-	  console.log("I'm ready to install for you");
-	  event.waitUntil(
-	    caches.open(cacheName).then(function(cache){
-	    	console.log('Adding files to cache');
-	    	return cache.addAll(cacheFiles);
-	    })
-	  )
-	})
-	self.addEventListener('activate', function(event) {
-         console.log('Service worker activated');
-         event.waitUntil(
-             caches.keys().then(function(cacheNames){
-                return Promise.all(cacheNames.map(function(thisCacheName){
-                    if(thisCacheName !== cacheName){
-                        console.log("[Service worker] Removing cached..");
-                        return caches.delete(thisCacheName);
-                    }
-                }))
-             })
-         )
+      console.log("[ServiceWorker] Installed");
     })
-    self.addEventListener('fetch',function(event){
-        console.log('Fetching',event.request.url)
-    }) 
+    self.addEventListener('activate',function(e){
+        console.log("[ServiceWorker] Actiated")
+    })
+    self.addEventListener('fetch',function(e){
+        console.log("[ServiceWorker] Fetching",e.request.url);
+    })
+    

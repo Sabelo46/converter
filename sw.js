@@ -1,4 +1,4 @@
-var cacheName = 'v1';
+var cacheName = 'v2';
 var cacheFiles = [
                   'index.html',
                   'ext.css',
@@ -17,7 +17,6 @@ var cacheFiles = [
 	self.addEventListener('install', function(event) {
 	  // Perform install step
 	  console.log("I'm ready to install for you");
-	 
 	  event.waitUntil(
 	    caches.open(cacheName).then(function(cache){
 	    	console.log('Adding files to cache');

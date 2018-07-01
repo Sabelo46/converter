@@ -3,7 +3,7 @@ var cacheFiles = [
                   'node_modules/bootstrap/dist/css/bootstrap.css',
                   'node_modules/bootstrap/dist/js/bootstrap.js',
                   'node_modules/jquery/dist/jquery.js',
-                  'main.js'
+                  'index.html'
                   ]
 	self.addEventListener('install',function(e){
 	  // Perform install step

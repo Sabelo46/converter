@@ -48,9 +48,11 @@ var cacheFiles = [
                         console.log("[ServiceWorker] Not found");
                     }
                     var responseClone = response.clone();
-                    caches.open('https://free.currencyconverterapi.com/api/v5/currencies')
+                    caches.open(cacheName)
                                 .then(function(cache){
-                                    alert('dedeidheihd');
+                                    console.log("[ServiceWorker] new data", e.request.url);
+                                    alert('djej');
+
                                 }) 
                 })
                 

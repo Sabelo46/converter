@@ -32,8 +32,7 @@
             option.value = `${currencies.results[c].id}`;  
             let check = currencies.results[c].id;
             if(typeof check === 'undefined'){
-              check ='';
-            
+              check =''; 
             }
             option.text =  ` ${check} (${currencies.results[c].currencyName})`;  
             expect.appendChild(option);

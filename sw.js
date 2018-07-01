@@ -3,7 +3,8 @@ var cacheFiles = [
                   'node_modules/bootstrap/dist/css/bootstrap.css',
                   'node_modules/bootstrap/dist/js/bootstrap.js',
                   'node_modules/jquery/dist/jquery.js',
-                  'index.html',
+                  '/',
+                  'sw.js',
                   'main.js',
                   'https://free.currencyconverterapi.com/api/v5/currencies'
                   ]

@@ -25,9 +25,9 @@
           xhr.send();
         })
       };
-      get().then(function(response){
-          console.log('Success',response);
-          let currencies = response.results;
+      get().then(function(data){
+          console.log('Success',data);
+          let currencies = data.results;
       
         
           for(c in currencies){ 

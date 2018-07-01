@@ -28,8 +28,8 @@ var get= function(url){
 };
 get('https://free.currencyconverterapi.com/api/v5/currencies')
     .then(function(response){
-        console.log("Success",response);
-        let currencies = response.data.results; 
+        console.log("Success",data);
+        let currencies = data.results; 
         for(c in currencies){ 
           let option=document.createElement('option');
           option.value = `${currencies[c].id}`;  

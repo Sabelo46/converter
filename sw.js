@@ -38,11 +38,12 @@ var cacheFiles = [
                 if(response) {
                     console.log("[ServiceWorker] found in cache",e.request.url);
                     return response;
+                    console.log('x',response)
                 }
                 else{
                     return fetch(e.request);
                 }
-                console.log('dedei');
+                
             })
         )
     })

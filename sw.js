@@ -1,11 +1,6 @@
 let cacheName = 'v1';
 var cacheFiles = [
                   'index.html',
-                  'ext.css',
-                  'im/a.jpg',
-                  'im/b.jpg',
-                  'im/c.jpg',
-                  'idb/db.js',
                   'node_modules/bootstrap/dist/css/bootstrap.css',
                   'node_modules/bootstrap/dist/js/bootstrap.js',
                   'node_modules/jquery/dist/jquery.js',

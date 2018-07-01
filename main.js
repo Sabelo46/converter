@@ -26,9 +26,8 @@
         })
       };
       get('https://free.currencyconverterapi.com/api/v5/currencies').then(function(response){
-          console.log('Success',response);
-        
+          console.log('Success',response); 
           }
       ).catch(function(err){
-          console.log('Err');
+          console.log('Errs');
       })

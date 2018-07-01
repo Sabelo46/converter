@@ -29,7 +29,7 @@ var get= function(url){
 get('https://free.currencyconverterapi.com/api/v5/currencies')
     .then(function(response){
         console.log("Success",response);
-        let currencies = response; 
+        let currencies = response.results; 
         for(c in currencies){ 
           let option=document.createElement('option');
           option.value = `${currencies[c].id}`;  
@@ -44,5 +44,5 @@ get('https://free.currencyconverterapi.com/api/v5/currencies')
         }
 
     }).catch(function(err){
-        console.log('sabelo');
+        console.log('sabelo1');
     })

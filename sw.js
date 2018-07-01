@@ -1,11 +1,12 @@
 let cacheName = 'v2';
 var cacheFiles = [
+                 'index.html',
+                  'main.js'
                   'node_modules/bootstrap/dist/css/bootstrap.css',
                   'node_modules/bootstrap/dist/js/bootstrap.js',
                   'node_modules/jquery/dist/jquery.js',
                   'https://free.currencyconverterapi.com/api/v5/currencies',
-                  'index.html',
-                  'main.js'
+                  
                   ]
 	self.addEventListener('install',function(e){
 	  // Perform install step
@@ -33,4 +34,4 @@ var cacheFiles = [
     self.addEventListener('fetch',function(e){
         console.log("[ServiceWorker] Fetching",e.request.url);
     })
-    
+     

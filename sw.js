@@ -1,4 +1,4 @@
-let cacheName = 'v1';
+let cacheName = 'v2';
 var cacheFiles = [
                   'index.html',
                   'node_modules/bootstrap/dist/css/bootstrap.css',

@@ -13,7 +13,7 @@
               {
                   if(xhr.status === 200)
                   {
-                      var result = xhr.responseText;
+                      var result = xhr.responseText
                       result = JSON.parse(result);
                       resolve(result);
                   }else{
@@ -23,11 +23,10 @@
           };
           xhr.open("GET",url,true);
           xhr.send();
-        })
+        });
       };
       get('https://free.currencyconverterapi.com/api/v5/currencies').then(function(response){
-          console.log('Success',response); 
-          }
-      ).catch(function(err){
+          console.log(response); 
+          }).catch(function(err){
           console.log('Errs');
       })

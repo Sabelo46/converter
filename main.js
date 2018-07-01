@@ -7,39 +7,28 @@ if('serviceWorker' in navigator)
       })
 } 
 
-get('https://free.currencyconverterapi.com/api/v5/currencies')
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
-          response.status);
-        return;
-      }
-
-      // Examine the text in the response
-      response.json().then(function(data) {
-        
-        // console.log(data.results);
-        // let currenciesHolder = data;
-        let currencies = data.results;
-      
-        
-        for(c in currencies){ 
-          let option=document.createElement('option');
-          option.value = `${currencies[c].id}`;  
-          let check = currencies[c].id;
-          if(typeof check === 'undefined'){
-            check ='';
-          
+var get= function(url){
+    return new Promise(function(resolve,reject){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status == 200){
+                var result = xhr.responseText;
+                result = JSON.parse(result);
+                resolve(result);
+            }else{
+                reject(xhr);
+            }
           }
-          option.text =  ` ${check} (${currencies[c].currencyName})`;  
-          expect.appendChild(option);
-          have.appendChild(option.cloneNode(true));
-        }
-
-      });
-    }
-  )
-  .catch(function(err) {
-    console.log('Oops!, err');
-  });
+        };
+        xhr.open("GET",url,true);
+        xhr.send();
+    
+     })
+}
+get('https://free.currencyconverterapi.com/api/v5/currencies')
+    .then(function(response){
+        console.log("Success",response);
+    }).catch(function(err){
+        console.log('ERRRR');
+    })

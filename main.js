@@ -28,5 +28,5 @@
       get('https://free.currencyconverterapi.com/api/v5/currencies').then(function(response){
           console.log(response); 
           }).catch(function(err){
-          console.log('Errs');
+          console.log(err);
       })

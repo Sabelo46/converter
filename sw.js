@@ -43,9 +43,9 @@ var cacheFiles = [
                     console.log("[ServiceWorker] found in cache",e.request.url);
                     return response;
                 }
-                else{
+                
                     return fetch(e.request);
-                }
+                
             
             })
         )

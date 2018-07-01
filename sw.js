@@ -5,7 +5,6 @@ var cacheFiles = [
                   'node_modules/jquery/dist/jquery.js',
                   'index.html',
                   'main.js',
-                  'sw.js',
                   'https://free.currencyconverterapi.com/api/v5/currencies'
                   ]
 	self.addEventListener('install',function(e){

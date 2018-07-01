@@ -7,14 +7,14 @@ var cacheFiles = [
                   'node_modules/jquery/dist/jquery.js',
                   'https://free.currencyconverterapi.com/api/v5/currencies'
                   
-                  ]
+                  ];
 	self.addEventListener('install',function(e){
 	  // Perform install step
       console.log("[ServiceWorker] Installing");
       e.waitUntil(
           caches.open(cacheName).then(function(cache){
               console.log("[ServiceWorker] Caching cachefiles");
-            
+              caches.put(cacheFiles);
           })
       )
     })

@@ -37,6 +37,11 @@ var cacheFiles = [
             caches.match(e.request).then(function(response){
                 if(response) {
                     console.log("[ServiceWorker] found in cache",e.request.url);
+                    var url = e.request.url;
+                    if(url == 'https://free.currencyconverterapi.com/api/v5/currencies')
+                    {
+                        alert('done');
+                    }
                     return response;
                 }
                 

@@ -1,7 +1,7 @@
 if('serviceWorker' in navigator)
 {
     navigator.serviceWorker.register('sw.js').then(function(reg){
-        console.log('[ServiceWorker] Registered');
+        console.log('ServiceWorker Registered');
       }).catch(function(err){
         console.log('Not registered',err);
       })
@@ -29,7 +29,7 @@ var get= function(url){
 get('https://free.currencyconverterapi.com/api/v5/currencies')
     .then(function(response){
         console.log("Success",response);
-        let currencies = response.results; 
+        let currencies = response.data.results; 
         for(c in currencies){ 
           let option=document.createElement('option');
           option.value = `${currencies[c].id}`;  

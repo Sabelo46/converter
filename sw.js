@@ -37,6 +37,9 @@ var cacheFiles = [
             caches.match(e.request).then(function(response){
                 if(response) {
                     console.log("[ServiceWorker] found in cache",e.request.url);
+                        fetch("index.html",{cache:cacheName}).then(function(response){
+                            alert();
+                        })
                     return response;
                 }
                 else{

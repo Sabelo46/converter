@@ -1,4 +1,4 @@
-cacheName = 'v1';
+let cacheName = 'v1';
 var cacheFiles = [
                   'index.html',
                   'ext.css',

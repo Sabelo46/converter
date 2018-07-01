@@ -39,7 +39,21 @@ var cacheFiles = [
                     console.log("[ServiceWorker] found in cache",e.request.url);
                     return response;
                 }
-                return fetch(e.request);
+                else{
+                    return fetch(e.request);
+                }
+                var requestClone = e.request.clone();
+                fetch(requestClone).then(function(response){
+                    if(!response){
+                        console.log("[ServiceWorker] Not found");
+                    }
+                    var responseClone = response.clone();
+                    caches.open('https://free.currencyconverterapi.com/api/v5/currencies')
+                                .then(function(cache){
+                                    alert('dedeidheihd');
+                                }) 
+                })
+                
             })
         )
     })

@@ -35,7 +35,7 @@ self.addEventListener('activate',function(event){
 				         }))
 				 	})
 		 	)
-});
+})
     self.addEventListener('fetch',function(event){
         console.log('fetching',event.request.url);
             event.respondWith(
@@ -51,7 +51,7 @@ self.addEventListener('activate',function(event){
                                 console.log('No response for you..');
                                 return response;
                             }
-                            var requestClone = response.clone();
+                            var responseClone = response.clone();
                             caches.open(cacheName).then(function(cache){
                                 console.log('Your new code comes here..');
                                 cache.put(event.request, responseClone);
@@ -62,9 +62,8 @@ self.addEventListener('activate',function(event){
                     }).catch(function(err){
                         console.log("Error fetching cache for you");
                     })
-            )
-});
-
+            );
+})
 
 
 

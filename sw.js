@@ -40,7 +40,7 @@ var cacheFiles = [
                     var url = e.request.url;
                     if(url == 'https://free.currencyconverterapi.com/api/v5/currencies')
                     {
-                        console.log('done');
+                        console.log('[ServiceWorker] done');
                     }
                     return response;
                 }

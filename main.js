@@ -27,7 +27,18 @@
       };
       get("https://free.currencyconverterapi.com/api/v5/currencies").then(function(response){
           currencies = response;
-          console.log(currencies.results);
+          for(c in currencies.results){ 
+            let option=document.createElement('option');
+            option.value = `${currencies[c].id}`;  
+            let check = currencies[c].id;
+            if(typeof check === 'undefined'){
+              check ='';
+            
+            }
+            option.text =  ` ${check} (${currencies[c].currencyName})`;  
+            expect.appendChild(option);
+            have.appendChild(option.cloneNode(true));
+          }
           }).catch(function(err){
           console.log(err);
           console.log('fake');

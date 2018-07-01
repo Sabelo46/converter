@@ -1,4 +1,4 @@
-var cacheName = 'v2';
+var cacheName = 'v1';
 var cacheFiles = [
                   'index.html',
                   'ext.css',
@@ -14,9 +14,15 @@ var cacheFiles = [
                   'https://free.currencyconverterapi.com/api/v5/currencies'
               
                   ]
-	self.addEventListener('install', function(e) {
+	self.addEventListener('install',function(e){
 	  // Perform install step
-      console.log("[ServiceWorker] Installed");
+      console.log("[ServiceWorker] Installing");
+      e.waitUntil(
+          caches.open(cacheName).then(function(cache){
+              console.log("[ServiceWorker] Caching cachefiles");
+              return cache.addAll(cacheFiles);
+          })
+      )
     })
     self.addEventListener('activate',function(e){
         console.log("[ServiceWorker] Actiated")

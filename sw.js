@@ -34,5 +34,14 @@ var cacheFiles = [
     })
     self.addEventListener('fetch',function(e){
         console.log("[ServiceWorker] Fetching",e.request.url);
+        e.respondWith(
+            caches.match(e.request).then(function(response){
+                if(response) {
+                    console.log("[ServiceWorker] found in cache",e.request.url);
+                    return response;
+                }
+                return fetch(e.response);
+            })
+        )
     })
      

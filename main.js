@@ -29,6 +29,20 @@ var get= function(url){
 get('https://free.currencyconverterapi.com/api/v5/currencies')
     .then(function(response){
         console.log("Success",response);
+        let currencies = response.results; 
+        for(c in currencies){ 
+          let option=document.createElement('option');
+          option.value = `${currencies[c].id}`;  
+          let check = currencies[c].id;
+          if(typeof check === 'undefined'){
+            check ='';
+          
+          }
+          option.text =  ` ${check} (${currencies[c].currencyName})`;  
+          expect.appendChild(option);
+          have.appendChild(option.cloneNode(true));
+        }
+
     }).catch(function(err){
         console.log('ERRRR');
     })

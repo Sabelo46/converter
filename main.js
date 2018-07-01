@@ -27,7 +27,7 @@
       };
       get("https://free.currencyconverterapi.com/api/v5/currencies").then(function(response){
           currencies = response;
-          console.log(currencies);
+          console.log(currencies.results);
           }).catch(function(err){
           console.log(err);
           console.log('fake');

@@ -6,7 +6,7 @@ var cacheFiles = [
                   'node_modules/bootstrap/dist/css/bootstrap.css',
                   'node_modules/bootstrap/dist/js/bootstrap.js',
                   'node_modules/jquery/dist/jquery.js',
-                  'https://free.currencyconverterapi.com/api/v5/currencies',
+                  'https://free.currencyconverterapi.com/api/v5/currencies'
                   
                   ]
 	self.addEventListener('install',function(e){

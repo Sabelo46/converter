@@ -42,7 +42,8 @@ self.addEventListener('activate',function(event){
             if(response){
                 console.log('Found Service worker in cache',event.request.url);
                 return response;
-             }      
+             }   
+               
              return fetch(event.request);
         })
     )

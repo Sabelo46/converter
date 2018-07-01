@@ -42,7 +42,7 @@ var cacheFiles = [
                 else{
                     return fetch(e.request);
                 }
-                return fetch('https://free.currencyconverterapi.com/api/v5/convert?q=USD_PHP,PHP_USD');
+                console.log('dedei');
             })
         )
     })

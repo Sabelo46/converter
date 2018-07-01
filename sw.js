@@ -16,7 +16,17 @@ var cacheFiles = [
       )
     })
     self.addEventListener('activate',function(e){
-        console.log("[ServiceWorker] Actiated");
+        console.log("[ServiceWorker] Activated");
+        e.waitUntil(
+            caches.keys().then(function(cacheNames){
+                return Promise.all(cacheNames.map(function(thisCacheName){
+                    if(thisCacheName !== cacheName){
+                        console.log("[ServiceWorker] Removing cached file");
+                        return caches.delete(thisCacheName);
+                    }
+                }))
+            })
+        )
     })
     self.addEventListener('fetch',function(e){
         console.log("[ServiceWorker] Fetching",e.request.url);

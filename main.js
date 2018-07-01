@@ -21,7 +21,7 @@
                   }
               }
           };
-          xhr.open("GET",url,true);
+          xhr.open("GET","https://free.currencyconverterapi.com/api/v5/currencies",true);
           xhr.send();
         });
       };

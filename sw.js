@@ -24,7 +24,7 @@ var cacheFiles = [
 	    	return cache.addAll(cacheFiles);
 	    })
 	  )
-	});
+	})
 	self.addEventListener('activate', function(event) {
 		 console.log('Service worker activated');
 		 event.waitUntil(
@@ -37,7 +37,7 @@ var cacheFiles = [
 				         }))
 				 	})
 		 	)
-		});
+		})
 
     self.addEventListener('fetch',function(event){
       event.respondWith(

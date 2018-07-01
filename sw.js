@@ -37,16 +37,33 @@ self.addEventListener('activate',function(event){
 		 	)
 })
     self.addEventListener('fetch',function(event){
-        event.respondWith(
-            caches.match(event.request).then(function(response){
-            if(response){
-                console.log('Found Service worker in cache',event.request.url);
-                return response;
-             }   
-               
-             return fetch(event.request);
-        })
-    )
+        console.log('fetching',event.request.url);
+            event.respondWith(
+                caches.match(event.request).then(function(response){
+                    if(response){
+                        console.log('Found Service worker in cache',event.request.url);
+                        return response;
+                     }    
+                     var requestClone = event.request.clone();
+                     fetch(requestClone)
+                        .then(function(response){
+                            if(!response){
+                                console.log('No response for you..');
+                                return response;
+                            }
+                            var requestClone = response.clone();
+                            caches.open(cacheName).then(function(cache){
+                                console.log('Your new code comes here..');
+                                cache.put(event.request, responseClone);
+                                return response;
+                            })
+                         })
+                       
+                     return fetch(event.request);
+                    }).catch(function(err){
+                        console.log("Error fetching cache for you");
+                    })
+            )
 });
 
 

@@ -16,7 +16,7 @@ var cacheFiles = [
               console.log("[ServiceWorker] Caching cachefiles");
               return cache.addAll(cacheFiles);
              cache.get('https://free.currencyconverterapi.com/api/v5/currencies').then(function(response){
-                 console.log(response);
+                 return response;
              })
               
           })

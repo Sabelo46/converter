@@ -12,7 +12,7 @@ var get= function(url){
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(){
           if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status == 200){
+            if(xhr.status === 200){
                 var result = xhr.responseText;
                 result = JSON.parse(result);
                 resolve(result);
@@ -24,7 +24,7 @@ var get= function(url){
         xhr.open("GET",url,true);
         xhr.send();
     
-     })
+     });
 };
 get('https://free.currencyconverterapi.com/api/v5/currencies')
     .then(function(data){

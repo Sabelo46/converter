@@ -50,6 +50,12 @@
      
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script>
+            navigator.serviceWorker.register('sw.js').then(function(reg){
+                console.log('[ServiceWorker] Registered');
+            }).catch(function(err){
+                console.log('Not registered',err);
+            });
+    </script>
 </body>
 </html>

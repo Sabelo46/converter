@@ -18,43 +18,41 @@
     </head>
 
     <body >
-        <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-           <!--  <div class="header-container">
-                <div class="row">
-                    <div class="header col-md-12 col-sm-12 col-xs-12">
-                        <p>Currency Converter</p>
-                    </div>
-
-                    <div class="header-date col-md-12 col-sm-12 col-xs-12">
-                        <p id="current-date"></p>
-                    </div>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+             <a class="navbar-brand" href="#">SabeloCurren</a>
+        </nav>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <label>currency i have : </label>
+                        <select class="form-control"  id="currencyList1" >
+                            
+                        </select>
                 </div>
+                <div class="col-md-6">
+                 <label>currency i want :</label>
+                    <select class="form-control"  id="currencyList2">
+                        
+                    </select>
+                </div> 
             </div>
- -->
-            <div class="body-container">
-                        <label class="label1">FROM: </label>
-                        <select class="form-control" id="currencyList1">
-
-                        </select>
-        
-                        <input type="text" id="amount" placeholder="Enter Amount" class="form-control">
-                        <label>TO: </label>
-                        <select class="form-control" id="currencyList2">
-
-                        </select>
-        
-                        <input type="text" id="convertedRate" placeholder="" class="form-control" readonly>
-                        <input type="submit" value="submit" class="form-control" onclick="submit_form()">
-
-                
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <label>Amount I  have to Exchange:</label>
+                    <input type="text" class="form-control" placeholder="Amount I  have to Exchange"  id="amount" />
+                </div>
+                <div class="col-md-6">
+                        <label>Amount  after being Exchanged:</label>
+                        <input type="text" class="form-control" placeholder="Amount after being Exchanged"  id="convertedRate"/>
+                    </div>
             </div>
-
-            <div class="footer-container">
-                <p>Created By Lewis</p>
+            <div class="row mt-5">
+            	<div class="col-md-12">
+            		<input type="submit" value="submit" class="form-control btn btn-block" onclick="submit_form()">
+            	</div>
             </div>
-            
+       </div>
+
         <script src="idb.js"></script>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
           <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>

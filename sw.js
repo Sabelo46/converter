@@ -36,7 +36,7 @@ var cacheFiles = [
       caches.match(e.request).then(function(response){
         if(response){
           return response;
-        }
+        } 
         var requestClone = e.request.clone();
         fetch(requestClone).then(function(response){
             if(!response){

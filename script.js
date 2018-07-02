@@ -1,5 +1,5 @@
 // OPEN AN INDEXEDDB DATABASE IF IT DOES NOT EXIST
-const dbPromise = indexedDB.open('currencyConverter', 1, upgradeDb => {
+const dbPromise = idb.open('currencyConverter', 1, upgradeDb => {
     upgradeDb.createObjectStore('currencyConverter');
 });
 

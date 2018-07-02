@@ -14,7 +14,7 @@ var cacheFiles = [
       e.waitUntil(
           caches.open(cacheName).then(function(cache){
               console.log("[ServiceWorker] Caching cachefiles");
-              cache.addAll(cacheFiles);
+              return cache.addAll(cacheFiles);
           })
       )
     })

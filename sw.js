@@ -47,9 +47,9 @@ var cacheFiles = [
             caches.open(cacheName).then(function(cache){
                 cache.put(e.request, requestClone);
                 return response; 
-            });
+            })
         }).catch(function(er){
-            console.log('errr');
+            console.log(er);
         })
         
       })

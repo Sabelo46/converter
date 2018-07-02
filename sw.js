@@ -33,11 +33,18 @@ var cacheFiles = [
     })
     self.addEventListener('fetch',function(e){
        e.respondWith(
-      caches.match(e.request).then(response => response || fetch(e.request).then(response => {
-              cache.put(e.request, response.clone());
-              return response;
-          }))
-    );
+      caches.match(e.request).then(function(response){
+        if(response){
+          return response;
+        }
+        var requestClone = e.request.clone();
+        caches.open(cacheName).then(function(cache){
+          cache.put(e.request, requestClone);
+          return response; 
+        })
+      }).catch(function(err){
+         console.log("[ServiceWorker] srtopppe");
+      })
           
     })
      

@@ -45,6 +45,6 @@ var cacheFiles = [
       }).catch(function(err){
          console.log("[ServiceWorker] srtopppe");
       })
-          
-    })
+    )
+})
      

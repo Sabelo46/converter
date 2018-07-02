@@ -10,11 +10,6 @@ const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', '
 let mm = months[today.getMonth()];
 let yyyy = today.getFullYear();
 
-today = `${dd} ${mm} ${yyyy}`;
-// document.getElementById('current-date').innerHTML=today;
-
-
-
 //FUNCTION TO CONVERT A CURRENCY
 function convertCurrency(amount, fromCurrency, toCurrency) {
 

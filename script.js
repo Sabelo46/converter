@@ -88,7 +88,7 @@ fetch(`https://free.currencyconverterapi.com/api/v5/countries`)
 });
 
 //FUNCTION TO SUBMIT FORM
-function click() {
+function submit_form() {
   let currency1 = document.getElementById("currencyList1");
   let currency1_text = currency1.options[currency1.selectedIndex].text;
 

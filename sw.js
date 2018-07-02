@@ -32,21 +32,12 @@ var cacheFiles = [
         )
     })
     self.addEventListener('fetch',function(e){
-        if(e.request.url == 'https://free.currencyconverterapi.com/api/v5/currencies')
-        {
-            e.respondWith( 
-                caches.match(e.request).then(function(response){
-                    if(response) {
-                        console.log("[ServiceWorker] found in cache",e.request.url);
-                        return response;
-                    }
-                    
-                        return fetch(e.request);
-                    
-                
-                })
-            )
-        }
-        
+       event.respondWith(
+      caches.match(event.request).then(response => response || fetch(event.request).then(response => {
+              cache.put(event.request, response.clone());
+              return response;
+          }))
+    );
+          
     })
      

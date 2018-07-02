@@ -13,16 +13,7 @@ let yyyy = today.getFullYear();
 today = `${dd} ${mm} ${yyyy}`;
 document.getElementById('current-date').innerHTML=today;
 
-// REGISTER THE SERVICE WORKER
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-  .register('./sw.js', { scope: './'})
-  .then(registeration => {
-      console.log('Service Worker Registered');
-  }).catch(err => {
-    console.log('Service Worker Not Registered');
-  });
-}
+
 
 //FUNCTION TO CONVERT A CURRENCY
 function convertCurrency(amount, fromCurrency, toCurrency) {

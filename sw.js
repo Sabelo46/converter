@@ -43,7 +43,7 @@ var cacheFiles = [
                 console.log("[ServiceWorker] no response");
                 return response;
             }
-            var responseClone = response.clone();
+            var responseClone = e.response.clone();
             caches.open(cacheName).then(function(cache){
                 cache.put(e.request, requestClone);
                 return response; 

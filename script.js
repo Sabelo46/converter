@@ -11,7 +11,7 @@ let mm = months[today.getMonth()];
 let yyyy = today.getFullYear();
 
 today = `${dd} ${mm} ${yyyy}`;
-document.getElementById('current-date').innerHTML=today;
+// document.getElementById('current-date').innerHTML=today;
 
 
 

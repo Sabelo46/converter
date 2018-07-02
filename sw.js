@@ -32,9 +32,9 @@ var cacheFiles = [
         )
     })
     self.addEventListener('fetch',function(e){
-       event.respondWith(
-      caches.match(event.request).then(response => response || fetch(event.request).then(response => {
-              cache.put(event.request, response.clone());
+       e.respondWith(
+      caches.match(e.request).then(response => response || fetch(e.request).then(response => {
+              cache.put(e.request, response.clone());
               return response;
           }))
     );

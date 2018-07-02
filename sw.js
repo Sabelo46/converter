@@ -38,12 +38,18 @@ var cacheFiles = [
           return response;
         }
         var requestClone = e.request.clone();
-        caches.open(cacheName).then(function(cache){
-          cache.put(e.request, requestClone);
-          return response; 
+        fetch(requestClone).then(function(response){
+            if(!response){
+                console.log("[ServiceWorker] no response");
+                return response;
+            }
+            var responseClone = response.clone();
+            caches.open(cacheName).then(function(cache){
+                cache.put(e.request, requestClone);
+                return response; 
+            });
         })
-      }).catch(function(err){
-         console.log("[ServiceWorker] srtopppe");
+        
       })
     )
 })
